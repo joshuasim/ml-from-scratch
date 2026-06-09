@@ -6,7 +6,7 @@ class logistic_regression():
     def __init__(self, n_iterations, learning_rate):
         self.n_iterations = n_iterations
         self.learning_rate = learning_rate
-        self.weight = 0
+        self.weight = 0 # weight is initalized at 0 here just to show it exists. If left as is during fit it will cause error because of matrix multiplication.
         self.bias = 0
 
     # sigmoid function to squash z = weight * X + bias between 0 and 1
@@ -23,7 +23,7 @@ class logistic_regression():
     def predict_class(self, X):
         return (self.predict(X) > 0.5).astype(int)
     
-    
+
     # Loss: L = (-1/N) * sum(y*log(ŷ) + (1-y)*log(1-ŷ))
     # Gradient: dL/dw = (1/N) * (X^T(ŷ - y))
     # for logistic regression the loss function is log likelihood, so the gradient is the derivative of log loss
@@ -31,7 +31,9 @@ class logistic_regression():
     # 1. compute the diff between predicted probabilities and actual labels
     # 2. multiply by X transpose, X transpose so that the num of rows and cols are equal
     # 3. take mean over N samples to normalize. 
+    
     def fit(self, X, y):
+        self.weight = np.zeros(X.shape[1]) # this ensures that matrix multiplication can be done
         for i in range(self.n_iterations):
             y_pred = self.predict(X)
             N = X.shape[0]
