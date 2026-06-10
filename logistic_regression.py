@@ -54,6 +54,7 @@ reg.fit(X, y)
 pred = reg.predict_class(X)
 accuracy = np.mean(pred == y)
 print(f'scratch model accuracy: {accuracy}')
+# 0.9
 
 #sklearn
 sklearn_reg = LogisticRegression()
@@ -61,7 +62,6 @@ sklearn_reg.fit(X, y)
 pred_sklearn = sklearn_reg.predict(X)
 skleanr_reg_accuracy = np.mean(pred_sklearn == y)
 print(f'sklearn model accuracy: {skleanr_reg_accuracy}')
-
-
+#0.903
 
 
