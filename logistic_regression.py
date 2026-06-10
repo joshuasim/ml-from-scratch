@@ -56,7 +56,7 @@ accuracy = np.mean(pred == y)
 print(f'scratch model accuracy: {accuracy}')
 # 0.9
 
-#sklearn
+# sklearn
 sklearn_reg = LogisticRegression()
 sklearn_reg.fit(X, y)
 pred_sklearn = sklearn_reg.predict(X)
@@ -64,4 +64,7 @@ skleanr_reg_accuracy = np.mean(pred_sklearn == y)
 print(f'sklearn model accuracy: {skleanr_reg_accuracy}')
 #0.903
 
+# my implementation and sklearn's performed almost equally well, 0.9 and 0.903 respectively,
+# but sklearn performed 0.3% better than my implementation. this difference is due to sklearn using 
+# a more advanced optimization algorithm (lbfgs) compared to vanilla gradient descent.
 
