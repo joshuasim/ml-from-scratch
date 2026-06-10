@@ -15,7 +15,7 @@ class logistic_regression():
         
     # predict function
     def predict(self, X):
-        z = self.weight * X + self.bias
+        z = np.dot(X, self.weight) + self.bias
         pred = self.sigmoid(z)
         return pred
 
@@ -41,3 +41,27 @@ class logistic_regression():
             grad_b = np.mean(y_pred - y) # grad_b = (1/N) * (y_pred - y)
             self.weight = self.weight - (self.learning_rate * grad_w)
             self.bias = self.bias - (self.learning_rate * grad_b)
+
+# test with dummy dataset
+
+from sklearn.datasets import make_classification
+from sklearn.linear_model import LogisticRegression
+
+X, y = make_classification(n_samples=1000, n_features=2, n_redundant=0, n_informative=2, n_clusters_per_class=1, random_state=42)
+
+reg = logistic_regression(1000, 0.01)
+reg.fit(X, y)
+pred = reg.predict_class(X)
+accuracy = np.mean(pred == y)
+print(f'scratch model accuracy: {accuracy}')
+
+#sklearn
+sklearn_reg = LogisticRegression()
+sklearn_reg.fit(X, y)
+pred_sklearn = sklearn_reg.predict(X)
+skleanr_reg_accuracy = np.mean(pred_sklearn == y)
+print(f'sklearn model accuracy: {skleanr_reg_accuracy}')
+
+
+
+
