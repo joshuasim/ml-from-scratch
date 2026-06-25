@@ -13,8 +13,8 @@ The goal isn't to build production-ready libraries. It's to understand each algo
 | --- | ----------------------------- | --------------------------------------------------------- | ------------------------ |
 | 1   | Linear Regression             | ✅ Complete                                               | `linear_regression.py`   |
 | 2   | Logistic Regression           | ✅ Complete                                               | `logistic_regression.py` |
-| 3   | Decision Tree (depth-1 stump) | 🔜 Coming soon                                            | —                        |
-| 4   | Naive Bayes                   | 🔜 Coming soon                                            | —                        |
+| 3   | Decision Tree (depth-1 stump) | ✅ Complete                                               | `decision_tree.py`       |
+| 4   | Naive Bayes                   | ✅ Complete                                               | `naive_bayes.py`         |
 | 5   | K-Means Clustering            | 🔜 Coming soon                                            | —                        |
 | 6   | KNN                           | 🔜 Coming soon                                            | —                        |
 | 7   | MLP Neural Network            | 🔜 Coming soon                                            | —                        |
