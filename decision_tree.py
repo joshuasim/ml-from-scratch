@@ -63,3 +63,12 @@ pred_sklearn = sklearn_tree.predict(x)
 sklearn_tree_accuracy = np.mean(pred_sklearn == y)
 print(f'sklearn model accuracy: {sklearn_tree_accuracy}')
 # 0.903
+
+#the algorithm is initialized by setting the right and left leaf to none, setting up the feature and 
+# threshold also at none. then for the fit you need to calcualte the gini for the different features 
+# to know where to split and what value the splits will take. for the actual fit function its just 
+# like iterating over the featuers adn the different threshholds which is just the unique values for 
+# the features. then u use those thresholds and calcualte their gini_weight and stuff and see if the 
+# current threshold has a lower gini than some other higher one if so then you recalculate if not you
+# move on then for predict it just sees if the left leaf has more than 50% 1 then itll predict 1 else
+# itll be 0/ this is my depth 1 tree summary how is it
